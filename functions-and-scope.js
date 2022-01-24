@@ -132,7 +132,7 @@ console.log((Math.round((gemiddeld(grades) + Number.EPSILON) * 100) / 100));
 
 let hoogst = grades[0];
 
-for (let i = 0; i < grades.length; i++ ){
+for (let i = 1; i < grades.length; i++ ){
     if (grades[i] > hoogst) {
         hoogst = grades[i];
     }
@@ -155,7 +155,7 @@ console.log(hoogst);
 function highestGrade (cijfers) {
     let hoogst = cijfers[0];
 
-    for (let i = 0; i < cijfers.length; i++) {
+    for (let i = 1; i < cijfers.length; i++) {
         if (cijfers[i] > hoogst) {
             hoogst = cijfers[i];
         }
