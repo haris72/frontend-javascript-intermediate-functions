@@ -169,20 +169,3 @@ console.log(highestGrade([8, 9, 4, 6, 10]));
 
 
 
-/* //had ook zo korter gekund volgens mij
-
-function checkEmailValidity (email){
-    const lastIndexEmail = email.length - 1;
-
-    if ((!email.includes("@") || (email.includes(",")) || (email.substring(lastIndexEmail)).includes("."))) {
-        return "false"
-    }
-    else
-        return "true"
-}
-
-console.log(checkEmailValidity("n.eeken@novi.nl"));
-console.log(checkEmailValidity("tessmellink@novi.nl"));
-console.log(checkEmailValidity("n.eekenanovi.nl"));
-console.log(checkEmailValidity("n.eeken@novinl."));
-console.log(checkEmailValidity("tessmellink@novi,nl"));*/
