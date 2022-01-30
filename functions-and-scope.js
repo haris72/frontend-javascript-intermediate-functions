@@ -2,7 +2,7 @@
 // maar ook een manier moeten vinden om hetgeen dat je verzamelt ergens te bundelen. Op deze manier zul je ontdekken hoe je omgaat met scope. Pak vooral het hoofdstuk op EdHub over for-loops er nog eens bij!
 // Tip: je mag hier geen ingebouwde object methoden gebruiken, dus daar hoef je niet naar te kijken.
 
-const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+
 
 /* Opdracht  1: Cum Laude */
 
@@ -16,6 +16,19 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 6
 
+const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+let aantal = 0;
+
+for (let i = 0; i < grades.length; i++ ){
+    if (grades[i] >=8) {
+        aantal++;
+    }
+}
+console.log(aantal);
+
+
+
+
 
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
@@ -26,6 +39,24 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude(grades) geeft 6
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
+
+
+
+function cumLaude (cijfers){
+    let aantal = 0;
+
+    for (let i = 0; i < cijfers.length; i++) {
+        if (cijfers[i] >= 8) {
+            aantal++;
+        }
+    }
+    return aantal;
+}
+console.log(cumLaude(grades));
+console.log(cumLaude([6, 4, 5]));
+console.log(cumLaude([8, 9, 4, 6, 10]));
+
+
 
 
 
@@ -43,6 +74,18 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // ---- Verwachte uitkomst: 6.642857142857143
 
 
+
+
+let gemid =0;
+
+for (let i = 0; i < grades.length; i++) {
+    gemid = gemid + grades[i];
+}
+
+console.log(gemid / grades.length);
+
+
+
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
@@ -54,11 +97,26 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
 
+function gemiddeld (numbers) {
+    let gemid = 0;
+
+    for (let i = 0; i < numbers.length; i++) {
+        gemid += numbers[i];
+    }
+    return gemid / numbers.length;
+}
+
+console.log(gemiddeld(grades));
+
+
+
+
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
 
+console.log((Math.round((gemiddeld(grades) + Number.EPSILON) * 100) / 100));
 
 
 /* Bonusopdracht: hoogste cijfer */
@@ -72,6 +130,17 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 // ---- Verwachte uitkomst: 9
 
+let hoogst = grades[0];
+
+for (let i = 1; i < grades.length; i++ ){
+    if (grades[i] > hoogst) {
+        hoogst = grades[i];
+    }
+}
+
+console.log(hoogst);
+
+
 
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
@@ -82,3 +151,21 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function highestGrade (cijfers) {
+    let hoogst = cijfers[0];
+
+    for (let i = 1; i < cijfers.length; i++) {
+        if (cijfers[i] > hoogst) {
+            hoogst = cijfers[i];
+        }
+    }
+    return hoogst;
+}
+
+console.log(highestGrade(grades));
+console.log(highestGrade([6, 4, 5]));
+console.log(highestGrade([8, 9, 4, 6, 10]));
+
+
+
