@@ -30,7 +30,7 @@ console.log(getEmailDomain("a.wiersma@outlook.com"));
 
 function typeOfEmail (email) {
     const zoek_domain = email.indexOf('@');
-    let domain = email.substring(zoek_domain + 1, email.length);
+    let domain = email.substring(zoek_domain + 1);
 
     if (domain.includes("novi.nl")) {
         return "medewerker"

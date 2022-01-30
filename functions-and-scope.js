@@ -101,7 +101,7 @@ function gemiddeld (numbers) {
     let gemid = 0;
 
     for (let i = 0; i < numbers.length; i++) {
-        gemid = gemid + numbers[i];
+        gemid += numbers[i];
     }
     return gemid / numbers.length;
 }
